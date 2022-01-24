@@ -13,17 +13,25 @@ router.get('/', async (req,res) => {
 })
 
 //GET route that check for user by ID
-router.get('/:id', async (req,res) => {
-    try {
-        const userData = await UserChore.findByPk(req.params.id, {
-          //attributes: ['username'] 
-        });
-        res.status(200).json(userData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
 
+router.delete('/:id', async (req, res) => {
+    try {
+      const userChoreData = await UserChore.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (!userChoreData) {
+        res.status(404).json({ message: 'No chore found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(userChoreData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 // POST route for new users signup
 router.post('/assignchore', async (req, res) => {

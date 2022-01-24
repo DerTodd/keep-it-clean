@@ -96,12 +96,34 @@ router.get('/chores', async (req,res) => {
         const showMeData = showMe.map((data) =>
         data.get({ plain: true })
         );
-        
+        console.log(showMeData)
     res.render('choresmain', { choresData, users, showMeData });
     } catch (err) {
         console.log(err)
         res.status(500).json(err);
     }
+})
+
+router.get('/userChores/:id', async (req,res) => {
+  try {
+      const userData = await UserChore.findByPk(req.params.id, {
+        //attributes: ['username'] 
+      });
+      res.status(200).json(userData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+})
+
+router.get('/userChores', async (req,res) => {
+  try {
+      const userData = await UserChore.findAll({
+        //attributes: ['username'] 
+      });
+      res.status(200).json(userData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
 })
 
 module.exports = router;
