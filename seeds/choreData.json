@@ -1,0 +1,62 @@
+[
+    {
+      "chore_name": "Washing dishes",
+      "value": 10,
+      "description": "Washing and drying the dishes.",
+      "button": "washTheDishes"
+    },
+    {
+      "chore_name": "Taking out trash",
+      "value": 15,
+      "description": "Taking out trash and recycling.",
+      "button": "trashy"
+    },
+    {
+      "chore_name": "Doing laundry",
+      "value": 10,
+      "description": "Cleaning the clothes, folding, and sorting them.",
+      "button": "laundryOnTheField"
+    },
+    {
+      "chore_name": "Sweep the floors",
+      "value": 10,
+      "description": "Remove the dust from the floors.",
+      "button": "witchesWork"
+    },
+    {
+      "chore_name": "Cean the baseboards",
+      "value": 30,
+      "description": "Wiping those baseboards clean.",
+      "button": "based"
+    },
+    {
+      "chore_name": "Vacuum",
+      "value": 10,
+      "description": "Make sure to suck up all the dirt from those nasty carpets and floors.",
+      "button": "youSuck"
+    },
+    {
+      "chore_name": "Dusting",
+      "value": 10,
+      "description": "Getting dust off those hard to reach places.",
+      "button": "fleshRemoval"
+    },
+    {
+      "chore_name":"Cleaning fans",
+      "value": 15,
+      "description": "Keeping the fans clear of dust and grime.",
+      "button": "notAFan"
+    },
+    {
+      "chore_name": "Clean room",
+      "value": 5,
+      "description": "Clean your own room.  that's it.",
+      "button": "roomForError"
+    },
+    {
+      "chore_name": "Set the table",
+      "value": 5,
+      "description": "Prepare the table for a meal or for guests.",
+      "button": "gameSetMatch"
+    }
+]

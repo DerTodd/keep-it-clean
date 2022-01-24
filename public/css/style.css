@@ -1,0 +1,139 @@
+.container {
+
+    margin-top: 10rem;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container .row {
+    margin: 0 auto;
+}
+
+.modal {
+    width: 75% !important;
+    height: 75% !important;
+}
+
+.card {
+    background-color: #0F9FBF;
+
+}
+
+h1 {
+    color: white;
+    font-family:'Pacifico';
+    font-size: 6rem;
+}
+
+body {
+    background-color: #0F9FBF;
+}
+
+#btnLog {
+    border:none;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #F2B705;
+    height: 4rem;
+    width: 25rem;
+    margin: 10px;
+}
+
+#newAcc {
+    border-radius: 10px 10px 10px 10px;
+    border:none;
+    background-color: #F29F05;
+    color: black;
+    height: 4rem;
+    width: 25rem;
+    margin-bottom: 1rem;
+}
+
+#btnSignUp {
+    background-color: lightseagreen;
+    margin-right: 15rem;
+}
+
+.input-field {
+    font-size: 36px;
+    margin-top: 2rem;
+    
+}
+
+.card-content {
+    border-bottom: 2px dotted #1B62BF;
+}
+
+
+
+#emailSignUp {
+    
+    border: 2px solid lightseagreen;
+    border-radius: 10px 10px 10px 10px;
+    width: 30rem;
+    
+}
+
+#user_name {
+    border: 2px solid lightseagreen;
+    border-radius: 10px 10px 10px 10px;
+    width: 30rem;
+}
+
+#passwordSignUp {
+    border: 2px solid lightseagreen;
+    border-radius: 10px 10px 10px 10px;
+    width: 30rem;
+}
+
+#Options {
+    margin-left: 15rem;
+}
+
+#maybeNames {
+    background-color:rgb(84,110,122);
+    color:white;
+    
+}
+
+#cardTitle {
+    font-size: 40px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid lightseagreen;
+}
+
+.choreBtn {
+    margin-top: .5rem;
+    width: 15rem;
+}
+
+.myDrop {
+    width: 15rem;
+}
+
+#points {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    width: 6rem;
+    border-radius: 25px 25px 25px 25px;
+    background-color: lightseagreen;
+}
+
+h5 {
+    font-size: 30px;
+}
+
+.listCard {
+    color:white;
+    width:10rem;
+    background-color: lightseagreen;
+    margin-left: 4rem;
+}
+
+#userCards {
+    height:60vh;
+    overflow-y: auto;
+}
