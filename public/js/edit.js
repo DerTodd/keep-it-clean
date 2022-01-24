@@ -1,11 +1,55 @@
 let buttonSelected = document.querySelector('.form-group');
-
+let choreId ='';
+let user_id = '';
+let userPoints = '';
+let totalPossiblePoints = '';
+let total =''; 
 function choreSelected(event){
+    
+
+
     if (event.target.classList.contains("itemBtn")){
         alert("Hello")
-    }
+        choreId = event.target.getAttribute('data-id');
+        alert(choreId)
+        user_id = event.target.getAttribute('value');
+        alert(user_id)
+        userPoints = event.target.getAttribute('points');
+        alert(userPoints)
+        totalPossiblePoints = event.target.getAttribute('tPoints');
+        alert(totalPossiblePoints)
+        total = parseInt(userPoints) + parseInt(totalPossiblePoints)
+        alert(total);
+        userUpdate(user_id,total,choreId)
+}return ;
 }
 
+const userUpdate = async () =>{
+    alert("Updating User");
+    const id = user_id;
+    const points = total;
+    const chore = choreId;
+    alert('id ' + id);
+    alert('points ' + points);
+    alert('chore id ' + chore);
+
+    if (id && points && chore) {
+        const response = await fetch(`/api/users/${id}`, {
+          method: 'POST',
+          body: JSON.stringify({ points }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+    
+        if (response.ok) {
+          alert("OK " + chore);
+          delButtonHandler(chore);
+        } else {
+          alert('Failed to create post');
+        }
+      }return
+    };
 
 
 const newFormHandler = async (event) => {
@@ -38,10 +82,11 @@ const newFormHandler = async (event) => {
     }
   };
   
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
+  const delButtonHandler = async (req) => {
+      alert("Trying to Delete")
+      const id = choreId
+      alert("chore " + id)
+    if (id) {
       const response = await fetch(`/api/userChore/${id}`, {
         method: 'DELETE',
       });

@@ -24,6 +24,25 @@ router.get('/:id', async (req,res) => {
     }
 })
 
+router.post('/:id', async (req,res) => {
+  try {
+    console.log(req.body)
+    const updateUser = await User.update(
+     
+      {
+        points: req.body.points,
+        
+    },
+
+    { where: { id: req.params.id } }
+    );
+
+    res.status(200).json(updateUser);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 
 // POST route for new users signup
 router.post('/signup', async (req, res) => {
