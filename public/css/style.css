@@ -20,8 +20,10 @@
 
 .card {
     background-color: #0F9FBF;
+    align-content: center;
 
 }
+
 
 h1 {
     color: white;
@@ -32,8 +34,15 @@ h1 {
 body {
     background-color: #0F9FBF;
 }
-
+.itemBtn {
+    border:none;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #F2B705;
+    width:30%;
+    
+}
 #btnLog {
+    color:black;
     border:none;
     border-radius: 10px 10px 10px 10px;
     background-color: #F2B705;
@@ -127,13 +136,33 @@ h5 {
 }
 
 .listCard {
+    align-items: center;
+    align-content: center;
     color:white;
-    width:10rem;
+    max-width:99%;
     background-color: lightseagreen;
-    margin-left: 4rem;
+    border-radius: 10px 10px 10px 10px;
+    
 }
 
 #userCards {
     height:60vh;
     overflow-y: auto;
+    align-content: center;
+    align-items: center;
+}
+
+li {
+    align-content: center;
+    align-items: center;
+    margin:0;
+    padding: 0.5em;
+    
+}
+
+ul {
+    align-content: center;
+    align-items: center; 
+    margin-block-start: 0;
+    padding:0;
 }

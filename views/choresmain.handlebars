@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col s12 m3 chore-list">
-        <div class="card blue-grey darken-1">
+        <div style="border-radius: 25px;" class="card blue-grey darken-1">
             <div class="card-content white-text">
                 <span class="card-title center-align" id="cardTitle">Chore List</span>
                 {{#each choresData as |chore|}}
@@ -21,20 +21,22 @@
         </div>
     </div>
     {{#each users as |user|}}
-        <div class="card col s12 m3 z-depth-3 center-align" id="maybeNames">            
+        <div style="background-color: #0F9FBF;" class="col s12 m3 center-align" id="maybeNames">  
+            <div class="card" style="padding: 1em; border-radius: 25px; background-color: rgb(84,110,122)">          
             <h3>{{user.username}}</h3>
             <h6>Banked Points: {{user.points}}</h6>
             <div id="userCards">
             <ul>
                 {{#each user.chores as |chore|}}
-                <div>
+                <div style="height: fit-content;">
                 <li class="card center-align listCard">{{chore.chore_name}}
-                <div class="form-group project-list">
-                <button type="button" tPoints="{{user.points}} "points="{{chore.value}}" value="{{userChore.user_id}}" class="btn btn-sm btn-danger itemBtn" data-id="{{userChore.id}}">+{{chore.value}}</button>
+                <div class="center-align form-group project-list">
+                <button type="button" tPoints="{{user.points}} "points="{{chore.value}}" value="{{userChore.user_id}}" class="center-align btn btn-sm btn-danger itemBtn" data-id="{{userChore.id}}">+{{chore.value}}</button>
                 </div>
                 </div>
                 {{/each}}
             </ul>
+            </div>
             </div>
         </div>
     {{/each}}
