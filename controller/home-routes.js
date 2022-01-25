@@ -97,7 +97,7 @@ router.get('/chores', withAuth, async (req,res) => {
         const showMeData = showMe.map((data) =>
         data.get({ plain: true })
         );
-        console.log(showMeData)
+        //console.log(showMeData)
     res.render('choresmain', { choresData,
        users,
         showMeData,
