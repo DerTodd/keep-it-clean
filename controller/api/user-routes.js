@@ -45,24 +45,29 @@ router.post('/:id', async (req,res) => {
 
 
 // POST route for new users signup
-router.post('/signup', async (req, res) => {
-  console.log(req.body);
-    try {
-        const createUser = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-          });
-        res.status(200).json(createUser)
-    } catch (err) {
-        res.status(500).json(err)
-    }
+router.post('/', async (req, res) => {
+  try {
+    console.log("Hello");
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
   
 
 // POST route to login user
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.log("Hello")
+    console.log(req.body.email)
+    console.log(req.body.password)
     const userLogin = await User.findOne({ where: { email: req.body.email } });
 
     if (!userLogin) {
@@ -94,14 +99,15 @@ router.post('/login', async (req, res) => {
 
 
 
-// router.post('/logout', (req, res) => {
-//   if (req.session.logged_in) {
-//     req.session.destroy(() => {
-//       res.status(204).end();
-//     });
-//   } else {
-//     res.status(404).end();
-//   }
-// });
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;

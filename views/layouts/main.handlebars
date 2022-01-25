@@ -11,7 +11,18 @@
   <title>Sweeper</title>
 </head>
 <body>
-  
+  <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/">homepage</a> |
+        <a href="/chores">chores</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/">homepage</a> |
+        <a href="/">chores</a> |
+        <a href="/">login</a>
+        {{/if}}
+      </nav>
 
 
   <h1 class="center-align">Sweeper</h1>
@@ -22,7 +33,9 @@
   <footer>
       
   </footer>
-
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="./public/js/getChore.js"></script>

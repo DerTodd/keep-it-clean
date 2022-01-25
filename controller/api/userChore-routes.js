@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { UserChore } = require('../../model');
 
 
+
 // GET route that checkes for all user data in the db
 router.get('/', async (req,res) => {
     try {
