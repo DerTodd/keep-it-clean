@@ -3,8 +3,8 @@ const loginHandler = async (event) => {
 
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
-    console.log(email);
-    console.log(password);
+    //console.log(email);
+    //console.log(password);
 
     if (email && password) {
         // Send a POST request to the API endpoint

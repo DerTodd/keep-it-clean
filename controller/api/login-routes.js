@@ -4,9 +4,9 @@ const { User } = require('../../model');
 // POST route to login user
 router.post('/', async (req, res) => {
   try {
-    console.log("Hello")
-    console.log(req.body.email)
-    console.log(req.body.password)
+    //console.log("Hello")
+    //console.log(req.body.email)
+    //console.log(req.body.password)
     const userLogin = await User.findOne({ where: { email: req.body.email } });
 
     if (!userLogin) {

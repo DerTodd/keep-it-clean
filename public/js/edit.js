@@ -9,29 +9,29 @@ function choreSelected(event){
 
 
     if (event.target.classList.contains("itemBtn")){
-        alert("Hello")
+        //alert("Hello")
         choreId = event.target.getAttribute('data-id');
-        alert(choreId)
+        //alert(choreId)
         user_id = event.target.getAttribute('value');
-        alert(user_id)
+        //alert(user_id)
         userPoints = event.target.getAttribute('points');
-        alert(userPoints)
+        //alert(userPoints)
         totalPossiblePoints = event.target.getAttribute('tPoints');
-        alert(totalPossiblePoints)
+        //alert(totalPossiblePoints)
         total = parseInt(userPoints) + parseInt(totalPossiblePoints)
-        alert(total);
+        //alert(total);
         userUpdate(user_id,total,choreId)
 }return ;
 }
 
 const userUpdate = async () =>{
-    alert("Updating User");
+    //alert("Updating User");
     const id = user_id;
     const points = total;
     const chore = choreId;
-    alert('id ' + id);
-    alert('points ' + points);
-    alert('chore id ' + chore);
+    //alert('id ' + id);
+    //alert('points ' + points);
+    //alert('chore id ' + chore);
 
     if (id && points && chore) {
         const response = await fetch(`/api/users/${id}`, {
@@ -43,10 +43,10 @@ const userUpdate = async () =>{
         });
     
         if (response.ok) {
-          alert("OK " + chore);
+          //alert("OK " + chore);
           delButtonHandler(chore);
         } else {
-          alert('Failed to create post');
+          alert('Failed to update');
         }
       }return
     };
@@ -83,9 +83,9 @@ const userUpdate = async () =>{
 //   };
   
   const delButtonHandler = async (req) => {
-      alert("Trying to Delete")
+      //alert("Trying to Delete")
       const id = choreId
-      alert("chore " + id)
+      //alert("chore " + id)
     if (id) {
       const response = await fetch(`/api/userChore/${id}`, {
         method: 'DELETE',
@@ -94,7 +94,7 @@ const userUpdate = async () =>{
       if (response.ok) {
         document.location.replace('/chores');
       } else {
-        alert('Failed to delete post');
+        alert('Failed to delete');
       }
     }
   };
