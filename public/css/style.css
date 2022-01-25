@@ -16,6 +16,15 @@
 .modal {
     width: 75% !important;
     height: 75% !important;
+    border-radius: 10px 10px 10px 10px;
+    align-items: center;
+    background-color: #63E2FF;
+    color: #000;
+}
+
+.modal-footer {
+    align-content: center;
+    background-color: #63E2FF;
 }
 
 .card {
@@ -24,11 +33,20 @@
 
 }
 
+.center {
+    align-content: center;
+}
+
 
 h1 {
     color: white;
     font-family:'Pacifico';
     font-size: 6rem;
+}
+h3 {
+    color: white;
+    font-family:'Pacifico';
+    
 }
 
 body {
@@ -77,6 +95,7 @@ nav {
 .input-field {
     font-size: 36px;
     margin-top: 2rem;
+    color: black;
     
 }
 
@@ -84,7 +103,13 @@ nav {
     border-bottom: 2px dotted #1B62BF;
 }
 
-
+#signup {
+    
+    border: 2px solid lightseagreen;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #F29F05;
+    
+}
 
 #emailSignUp {
     
@@ -177,4 +202,12 @@ ul {
     align-items: center; 
     margin-block-start: 0;
     padding:0;
+}
+
+lable {
+    color: black;
+}
+
+::placeholder {
+    color:black;
 }
